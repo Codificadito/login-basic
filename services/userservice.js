@@ -28,7 +28,7 @@ exports.loginUser = async (email, password) => {
   }
 
   // Validar formato de contraseña (puedes ajustar según las necesidades)
-  if (password.length < 6) {
+  if (password.length > 6) {
     throw new Error('La contraseña debe tener al menos 6 caracteres');
   }
 
@@ -54,9 +54,9 @@ exports.updateUser = async (id, nombre, apellido, email, imgprofile, grupo, role
 
 //ok
 // Función en el servicio
-exports.verificarSesion = async (email, sessionKey) => {
+exports.verificarSesion = (email, sessionKey) => {
   try {
-    const data = await userRepository.verificarSesion(email, sessionKey);
+    const data = userRepository.verificarSesion(email, sessionKey);
     return data
   } catch (error) {
     throw new Error(`Error al verificar sesión: ${error.message}`);

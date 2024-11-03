@@ -19,13 +19,13 @@ function hashPassword(password) {
 }
 
 // Crear un nuevo usuario
-exports.createUsers = async (nombre, apellido, email, password, imgprofile, grupo, role, permisos) => {
+exports.createUsers = async (Nombre, apellido, email, password, imgprofile, grupo, role, permisos) => {
   try {
     // Hashear la contraseña antes de insertarla en la base de datos
     const hashedPassword = await hashPassword(password);
 
     // Llamamos a la función para insertar el usuario en la base de datos
-    return await db.insertarUsuario(nombre, apellido, email, hashedPassword, imgprofile, grupo, role, permisos);
+    return await db.insertarUsuario(Nombre, apellido, email, hashedPassword, imgprofile, grupo, role, permisos);
   } catch (error) {
     throw new Error(`${error.message}`);
   }

@@ -307,7 +307,7 @@ exports.insertarUsuario = async (nombre, apellido, email, hashedPassword, imgpro
     }
 
     const query = `
-      INSERT INTO users (nombre, apellido, email, password, imgprofile, grupo, role, permisos)
+      INSERT INTO users (yapellido, email, password, imgprofile, grupo, role, permisos)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 

@@ -9,3 +9,8 @@ build/               # Archivos de construcción
 # Archivos de cache
 .cache/
 .tmp/
+
+
+# Archivos  
+db/system.db
+package-lock.json

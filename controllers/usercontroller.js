@@ -47,11 +47,11 @@ exports.loginUser = async (req, res) => {
     
     // Verificación básica
     if (!email || !password) {
-      return res.status(400).json({ message: 'Email y contraseña son requeridos' });
+      return res.status(200).json({ message: 'Email y contraseña son requeridos' });
     }
 
     // Llamada al servicio de login para obtener la clave de sesión
-    let sessionKey = await userService.loginUser(email, password);
+    let sessionKey = await userServices.loginUser(email, password);
     console.log('Clave de sesión obtenida:', sessionKey);
 
     // Respuesta exitosa con la clave de sesión
@@ -74,7 +74,7 @@ exports.updateUser = async (req, res) => {
       return res.status(401).json({ message: 'No se encontró la clave de sesión' });
     }
 
-    let isSessionValid = await userService.verificarSesion(email, sessionKey);
+    let isSessionValid = await userService.verificarSesion(emails, sessionKey);
     if (!isSessionValid) {
       return res.status(401).json({ message: 'Sesión no válida' });
     }
