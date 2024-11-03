@@ -121,7 +121,7 @@ Esta API permite gestionar usuarios, sesiones y realizar operaciones de autentic
 
 3. Inicia la API:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## 💡 Notas
