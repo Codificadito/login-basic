@@ -110,7 +110,7 @@ Esta API permite gestionar usuarios, sesiones y realizar operaciones de autentic
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/tu-repositorio.git
+   git clone https://github.com/Codificadito/login-basic.git
    cd tu-repositorio
    ```
 
