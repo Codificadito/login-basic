@@ -111,15 +111,19 @@ Esta API permite gestionar usuarios, sesiones y realizar operaciones de autentic
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Codificadito/login-basic.git
-   cd tu-repositorio
    ```
 
-2. Instala las dependencias:
+2. Cambia el repositorio:
+   ```bash
+   git switch with-errors-3-functions
+   ```
+
+3. Instala las dependencias:
    ```bash
    npm install
    ```
 
-3. Inicia la API:
+4. Inicia la API:
    ```bash
    npm run dev
    ```
