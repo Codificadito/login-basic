@@ -1,0 +1,92 @@
+POST http://127.0.0.1:3000/api/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "user",
+  "apellido": "lastname",
+  "email": "jose@email.com",
+  "password": "contraseña",
+  "imgprofile": "profile.jpg",
+  "grupo": "Testers",
+  "role": "dueño",
+  "permisos": "lectura"
+}
+
+
+
+//iniciar sesion
+
+###
+PUT http://127.0.0.1:3000/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "jose@email.com",
+  "password": "contraseña"
+}
+
+###
+PUT http://127.0.0.1:3000/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "admin@admin.com",
+  "password": "adminpassword"
+}
+
+###
+//Actualizar usuario
+PUT http://127.0.0.1:3000/api/update HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer <sessionKey>
+
+{
+  "id": 1,
+  "nombre": "John",
+  "apellido": "Doe",
+  "email": "john.doe@example.com",
+  "imgprofile": "new_profile.jpg",
+  "grupo": "Testers",
+  "role": "dueño",
+  "permisos": "escritura"
+}
+
+###
+//check -sesion
+GET  http://127.0.0.1:3000/api/check HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer 7c6eca00e6b65bafa5d3e4a76e97e04c91bd177287c1a0a2c97870029750fb2dc82366f107c2c34be3d1dafbb2b29974d780e42e57b21657691c6441966e640d
+
+{
+  "email": "jose@email.com"
+}
+
+###
+//logOutUser
+POST http://127.0.0.1:3000/api/logout HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer f8f8fd11f11d4151cd4dbe3a7baa9088c4ce879e216dda88c66c0eb9c4042a86c7093dac98e47f1bdd6409f1dda4c3a1587ae3331e7deee600a67c2dbb1562ee
+
+{
+  "email": "jose@email.com"
+}
+
+###
+
+//forgot-passwword
+PUT http://127.0.0.1:3000/api/forgot-password HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "jose@email.com"
+}
+
+###
+
+//Reset-passwword
+PUT http://127.0.0.1:3000/api/reset-password?token=key HTTP/1.1
+Content-Type: application/json
+
+{
+  "newPassword": "mi_contraseña"
+}
