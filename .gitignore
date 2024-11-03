@@ -1,0 +1,11 @@
+# Node.js
+node_modules/        # Dependencias
+npm-debug.log        # Archivos de log de npm
+yarn-error.log       # Archivos de error de Yarn
+dist/                # Archivos de distribución, si se compilan con Babel, TypeScript, etc.
+build/               # Archivos de construcción
+.env                 # Variables de entorno (credenciales sensibles)
+
+# Archivos de cache
+.cache/
+.tmp/
